@@ -1,6 +1,6 @@
 import './css/styles.css';
 import { fetchCountries } from './js/fetchcountries';
-import { countryCardTeemplate, countryListTemplate } from './js/template';
+import { countryСardTeemplate, countryListTemplate } from './js/template';
 import { refs } from './js/refs';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import debounce from 'lodash.debounce';
@@ -9,7 +9,7 @@ const DEBOUNCE_DELAY = 300;
 refs.searchBox.addEventListener('input', debounce(onInputCountry, DEBOUNCE_DELAY));
 
 function onInputCountry() {
-  const countryName = refs.searchBox.value;
+  const countryName = refs.searchBox.value.trim();
   if (countryName === '') {
     refs.countryInfo.innerHTML = '';
     refs.countryList.innerHTML = '';
